@@ -1,0 +1,704 @@
+@import "_mixins";
+@import "_base";
+@import "_icons";
+
+/* Feed
+*********/
+main#feed {
+    padding-top: .5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    /* ---------- FEED BODY ---------- */
+    #posts-show-type {
+        height: 5px;
+        margin-bottom: 13px;
+        margin-top: -10px;
+    }
+    
+    #posts-show-type > a {
+        color: #4e4d4d;
+        font-size: 1.3rem;
+    }
+    
+    #posts-show-type > a:after {
+        content: none;
+    }
+    
+    #posts-show-type ul {
+        padding: 0;
+        margin-top: -10px;
+        min-width: unset;
+        text-align: unset;
+        left: 46px!important;
+    }
+    
+    #posts-show-type li {
+        color: #c3c3c3;
+        padding-top: .4rem;
+        font-size: .9rem;
+        cursor: pointer;
+        @include make-transition($on: color, $sec: .1);
+    }
+    
+    #posts-show-type li:first-child {
+        border-bottom: 1px solid #ccc;
+    }
+    
+    #posts-show-type li.active {
+        cursor: default;
+    }
+    
+    #posts-show-type li:hover {
+        color: #777;
+    }
+    
+    #posts-show-type li.active,
+    #posts-show-type li:active {
+        color: $nav;
+    }
+    
+    .post {
+        @extend %post;
+        @extend %feedPost;
+        margin-bottom: .75rem;
+    }
+}
+
+/* Blog
+*********/
+main#blog {
+    font-family: $fonty;
+    #aboutMe-col,
+    #myPosts-col {padding: 0 10px;}
+    
+    #user-img-modal .modal-header,
+    #cover-img-modal .modal-header {
+        padding: 10px 15px 6px;
+    }
+    
+    #user-img-modal .modal-dialog {
+        max-width: 380px;
+        margin: auto;
+    }
+    
+    #user-img-modal img.img-thumbnail,
+    #cover-img-modal img.img-thumbnail {
+        max-height: 300px;
+    }
+    
+    article {
+        > div.box {
+            @include make-box-shadow;
+            @include bg-color;
+            padding: .75rem .8rem;
+            border-radius: .25rem;
+            margin-bottom: .8rem;
+        }
+        
+        #whose-blog {
+            padding-bottom: .9rem;
+
+            #cover-img {
+                background: url('../images/cover.jpeg') no-repeat center center $nav;
+                background-size: cover;
+                width: 100%;
+                height: 220px;
+                border-top-right-radius: .25rem;
+                border-top-left-radius: .25rem;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            
+            #user-img {
+                margin-top: -75px;
+                height: 135px;
+                cursor: pointer;
+            }
+            
+            #user-name {
+                margin-top: .85rem;
+                margin-bottom: 0;
+                padding-left: .8rem;
+                padding-right: .8rem;
+            }
+            
+            .active {
+                position: absolute;
+                margin-left: 6px;
+                margin-top: 5px;
+                font-size: 55%;
+                color: $active-badge;
+            }
+            
+            #something-about {
+                color: #888;
+                font-size: .85rem;
+                line-height: 1.35;
+                padding-left: .8rem;
+                padding-right: .8rem;
+                margin-top: .3rem;
+            }
+            
+            #contacts-links {
+                margin-top: .4rem;
+                text-align: center;
+            }
+
+            #contacts-links li {
+                display: inline-block;
+                margin: 0 2px;
+            }
+
+            #contacts-links .link {
+                color: #b3b3b3;
+            }
+
+            #contacts-links .link:hover,
+            #contacts-links .link:active {
+                color: $font;
+            }
+        }
+        
+        .box hr {
+            margin: .5rem -.8rem;
+        }
+        
+        #intro p {
+            color: #888;
+            padding: .25rem 0 .25rem .3rem;
+            position: relative;
+            font-size: .95rem;
+        }
+        
+        #intro p:last-child {
+            padding-bottom: 0;
+        }
+        
+        #intro .intro-icon {
+            font-size: .85rem;
+            margin-right: .3rem;
+        }
+        
+        #intro .my-intro {
+            color: $font;
+        }
+        
+        #contact #btn-follow {
+            color: #fff;
+            background-color: #b3b3b3;
+            border-color: #b3b3b3;
+        }
+        
+        #contact #btn-follow:hover,
+        #contact #btn-follow:active {
+            background-color: #a2a2a2;
+            border-color: #a2a2a2;
+        }
+        
+        #contact > .btn {padding-right: .7rem!important;}
+        
+        #contact #btn-follow.following .icon-plus:before {
+            content: "\71";
+        }
+    }
+    
+    #my-posts {
+        margin: 0;
+        @extend %iconSpace;
+    }
+    
+    div.post-container {
+        margin-bottom: .75rem;
+        padding: 0;
+    }
+    
+    .post {
+        @extend %post;
+    }
+    
+    #change-user-img-modal .modal-body,
+    #change-cover-img-modal .modal-body {
+        padding: 15px 0;
+        margin: 0 auto;
+    }
+
+    .cropit-preview {
+        background-color: #f8f8f8;
+        background-size: cover;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-top: 7px;
+    }
+
+    .cropit-preview-image-container {
+        cursor: move;
+    }
+    
+    #change-user-img-modal .cropit-preview {
+        width: 250px;
+        height: 250px;
+    }
+    
+    #change-cover-img-modal .cropit-preview {
+        width: 420px;
+        height: 170px;
+    }
+    
+}
+
+#blog.my-blog {
+    .post {
+        @extend %iconColor;
+    }
+}
+
+#blog.not-my-blog {
+    .post {
+        @extend %reactToggle;
+    }
+}
+
+/* Calendar
+*************/
+main#calendar {
+    #calendar-container {
+        text-transform: capitalize;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0.25rem;
+        padding-bottom: .1rem;
+        @include make-box-shadow;
+        @include bg-color;
+        
+        header .month {
+            @include bg-color($lightyellow);
+            @include color($white);
+            padding: .7rem 0;
+            margin-bottom: 0;
+        }
+        
+        header .month small {font-size: 60%;}
+        
+        header a.btn {
+            @include color(#7b7549);
+            @include make-transition($on: color, $sec: .1);
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: .5rem;
+            width: 5px;
+            height: 32px;
+            font-size: 17px;
+        }
+        
+        header a.btn-next {
+            right: 4.5rem;
+        }
+        
+        header a.btn-prev {
+            left: 4.5rem;
+        }
+        
+        header a.btn:hover {@include color($white);}
+        
+        header a.btn-next:before {position: absolute; right: 0;}
+        
+        header a.btn-prev:before {position: absolute; left: 0;}
+        
+        table {
+            width: 100%;
+        }
+        
+        thead {
+            @include color($darkblue);
+            font-size: .8rem;
+            font-weight: 500;
+            border-bottom: 1px solid #ececec;
+        }
+        
+        td {
+            padding: 0.5rem 0;
+        }
+        
+        .day {
+            color: #d6d6d6;
+            display: inline-block;
+            width: 2em;
+            height: 2em;
+            line-height: 1.8em;
+            font-size: .75rem;
+            border-radius: 50%;
+            border: 2px solid transparent;
+        }
+        
+        .day.today {
+            border: 2px dotted $green;
+            color: $font;
+        }
+        
+        .day.wrong-month {
+            display: none;
+        }
+        
+        .day.happy {
+            background: $green;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .day.sad {
+            background: $pink;
+            color: #fff;
+        }
+        
+        .day.joined {
+            background-color: $yellow;
+            color: #fff;
+        }
+    }
+    
+    #show-day-header {
+        @include bg-color(#17de6b);
+        color: #fff;
+        text-align: center;
+        padding: .5rem 0;
+        margin-bottom: 1rem;
+        border-radius: .25rem;
+    }
+    
+    div.post-container {
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+    
+    .post {
+        @extend %post;
+        @extend %iconColor;
+        @extend %iconSpace;
+        font-family: $fonty;
+    }
+}
+
+/* Settings
+*************/
+main#settings {
+    #settings-list {
+        background-color: #fff;
+        margin-bottom: 1rem;
+    }
+    
+    #settings-list a {
+        margin: 0 .5rem;
+        color: #989898;
+    }
+    
+    #settings-list a.active {
+        color: $nav;
+    }
+    
+    #settings-tabContent .col-md-8.offset-md-2 {
+        background-color: #fff;
+        border-radius: .25rem;
+    }
+    
+    #settings-tabContent input[type="text"],
+    #settings-tabContent input[type="date"],
+    #settings-tabContent select {
+        margin-left: 15px;
+        margin-right: -15px;
+        margin-top: -4px;
+    }
+    
+    #list-contacts #add-link {
+        cursor: pointer;
+        color: #868e96;
+        transition: color .2s ease-in-out;
+    }
+    
+    #list-contacts #add-link:hover {
+        color: $nav !important;
+    }
+    
+    #list-contacts .form-group.row.col-12 {
+        padding: 0;
+    }
+    
+    #list-account ul {
+        line-height: 1.6;
+    }
+    
+    #list-account li a {
+        color: $gray;
+        display: block;
+        padding: .5rem 15px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+    
+    #list-account li a:hover {
+        color: $font;
+    }
+    
+    #list-account li:last-child a {
+        border-bottom: none;
+    }
+    
+    .modal .user-container {
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        display: -ms-flexbox;
+        justify-content: space-between;
+        -ms-flex-pack: justify;
+        align-items: center;
+        -ms-flex-align: center;
+    }
+    
+    .modal li.user-container img {
+        width: 40px;
+        height: 40px;
+        max-width: 100%;
+        border-radius: 50%;
+    }
+    
+    .modal a.user {
+        color: $font;
+    }
+    
+    .modal a.user::before {
+        content: "\00a0";
+    }
+    
+    .modal li.user-container .icon {
+        cursor: pointer;
+        @include make-transition($on: color);
+    }
+    
+    .modal li.user-container .icon.icon-check-circle {
+        color: $green;
+    }
+    
+    .modal li.user-container .icon.icon-remove-circle {
+        color: $red;
+    }
+    
+    .modal li.user-container .icon.icon-check-circle:hover,
+    .modal li.user-container .icon.icon-remove-circle:hover {
+        color: $lightgray;
+    }
+    
+    .modal-footer {
+        padding-top: 0;
+        border-top: none;
+    }
+}
+
+/* Post-Preview
+****************/
+#post-preview {
+    padding: .5rem 0;
+    
+    .post {
+        @extend %post;
+    }
+}
+
+#post-preview.my-post {
+    .post {
+        @extend %iconColor;
+        @extend %iconSpace;
+        font-family: $fonty;
+    }
+}
+
+#post-preview.not-my-post {
+    .post {
+        @extend %feedPost;
+    }
+}
+
+/* Search
+**********/
+#search {
+    #search-here {
+        input,
+        button.btn {
+            border-radius: 0;
+            border: none;
+        }
+    }
+    
+    #search-result {
+        li {
+            padding: .5rem 0;
+            display: flex;
+            display: -ms-flexbox;
+            justify-content: space-between;
+            -ms-flex-pack: justify;
+            align-items: center;
+            -ms-flex-align: center;
+        }
+        
+        li:not(:first-of-type) {
+            border-top: 1px solid #ddd;
+        }
+        
+        li a {
+            display: flex;
+            display: -ms-flexbox;
+            justify-content: flex-start;
+            -ms-flex-pack: justify;
+            align-items: center;
+            -ms-flex-align: center;
+            width: 75%;
+            color: #afafaf;
+        }
+        
+        li a > div {
+            margin-left: .75rem;
+        }
+        
+        li img {
+            width: 80px;
+            height: 80px;
+            max-width: 100%;
+            border-radius: 50%;
+        }
+        
+        li a h5 {
+            color: $font;
+            margin-bottom: 0;
+        }
+        
+        li a h5,
+        li a h6 {cursor: pointer;}
+        
+        li a h6,
+        li a p {font-size: .9rem;}
+        
+        .icon-active {
+            font-size: 60%;
+            color: $active-badge;
+        }
+        
+        .btn-follow .icon-plus {
+            font-size: .8rem;
+        }
+        
+        .btn-follow.following .icon-plus:before {
+            content: "\71";
+            font-size: .75rem;
+        }
+    }
+}
+
+/* About
+**********/
+#about {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    
+    h3 {
+        color: #ffe4c4;
+        background-color: $nav;
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: .25rem;
+    }
+    
+    nav {
+        border-bottom: 1px solid #ccc;
+    }
+
+     #how-tab a.nav-item {
+        color: #97adc3;
+        padding: 0 .2rem .5rem;
+    }
+    
+    #how-tab a.nav-item.active {
+        color: #556c84;
+        font-weight: bold;
+    }
+    
+    #how-tabContent .img-container {
+        padding: .5rem;
+        margin-bottom: .5rem;
+        border-radius: .25rem;
+        text-align: center;
+        background-color: #fff5e9;
+    }
+    
+    #how-tabContent .what-container {
+        color: #556c84;
+        padding: .5rem;
+    }
+    
+    #how-tabContent .what-container li span.number {
+        background-color: #fff5e9;
+        padding: .25rem .5rem;
+        border-radius: 50%;
+        font-weight: bold;
+    }
+    
+}
+
+/* Login
+**********/
+body.login-body {
+    position: static;
+
+    #login {
+        background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)),
+                url('../images/const/login.jpg') no-repeat center center #333;
+        background-size: cover;
+        position: relative;
+        min-height: 100vh;
+        height: 100%;
+        overflow: hidden;
+        padding-bottom: 15px;
+    }
+    
+    #logo {
+        margin-top: 14vh;
+    }
+    
+    .signup #logo {
+        margin-top: 5vh;
+        margin-bottom: 5px;
+    }
+    
+    #logo a {
+        color: unset;
+    }
+    
+    #logo img {
+        height: 100px;
+    }
+    
+    #login-content {
+        margin: auto;
+        padding: 1.2rem 1rem .75rem;
+        background-color: rgba(0, 0, 0, .4);
+        border-radius: .5rem;
+    }
+    
+    .gray-text {
+        color: #a9a9a9;
+    }
+    
+    .reset-password {
+        #logo {
+            margin-top: 16vh;
+            margin-bottom: 5px;
+        }
+        
+        #login-content {
+            padding: 1.2rem 1rem;
+        }
+    }
+}
+
+@import "_responsive";

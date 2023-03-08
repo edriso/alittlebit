@@ -1,0 +1,139 @@
+/* =========== Responsive =========== */
+/* large devices */
+@media(max-width: 992px) {
+    h3 {font-size: 1.25rem;}
+    
+    #search {
+        .btn {font-size: .85rem!important;}
+        
+        input {font-size: .9rem;}
+        
+        #search-result {
+            li a > div {
+                margin-left: .5rem!important;
+                padding: .5rem 0;
+            }
+            
+            li img {
+                width: 65px!important;
+                height: 65px!important;
+            }
+            
+            li h5 {
+                font-size: 1.1rem!important;    
+            }
+            
+            li h6,
+            li p {
+                font-size: .85rem!important;
+            }
+        }
+    }
+    
+    #about {
+        div.mb-4 p.text-secondary {font-size: .95rem;}
+        div.mb-4 p.lead {font-size: 1.1rem;}
+    }
+}
+
+/* medium devices */
+@media(max-width: 767.98px) {
+    body {
+        top: 61px;
+    }
+      
+    .post p.post-text,
+    .post p.post-text-mini {
+        line-height: 1.35!important;
+    }
+    
+    main#feed {
+        left: 0!important;
+        
+        .post .who img {
+            width: 38px;
+            height: 38px;
+        }
+    }
+    
+    main#feed button#post-it-here,
+    main#blog button#post-it-here {right: 10px;}
+    
+    #blog #change-cover-img-modal .cropit-preview {
+        width: 300px!important;
+    }
+    
+    #search {
+        .btn {font-size: .7rem!important;}
+        
+        input {font-size: .8rem;}
+        
+        #search-result {
+            li img {
+                width: 50px!important;
+                height: 50px!important;
+            }
+            
+            li h5 {
+                font-size: 1rem!important;    
+            }
+            
+            li h6,
+            li p {
+                font-size: .8rem!important;
+            }
+        }
+    }
+    
+    body.login-body .signup #logo {
+        margin-top: 3vh;
+    }
+}
+
+@media(max-width: 500px) {
+    body.login-body #login-content {
+        width: 85%!important;
+    }
+    
+    main#about #how-tab {
+        font-size: .9rem;
+    }
+}
+
+@media(min-width: 768px) {
+    body.login-body #login-content {
+        width: 65%!important;
+    }
+}
+
+/* for Masonry */
+@media(min-width: 992px) {
+    main#feed #global-posts {margin: 0!important;}
+    
+    main#feed .post-container {padding: 0!important;}
+    
+    main#blog .post-container {
+        max-width: calc(50% - 7.5px);
+        padding: 0!important;
+    }
+}
+
+@media(min-width: 1200px) {
+    main#feed .post-container {
+        max-width: calc(33.333333% - 10px);
+    }
+    
+    main#blog #user-name {
+        font-size: 1.5rem!important;
+    }
+    
+    main#blog #something-about {
+        font-size: .95rem!important;
+    }
+}
+
+@media(min-width: 992px) and (max-width: 1199.98px) {
+    main#feed .post-container {
+        max-width: calc(50% - 7.5px);
+    }
+}

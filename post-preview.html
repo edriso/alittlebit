@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>John&#39;s post</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="images/const/favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- =============== Navbars =============== -->
+    <nav id="navbar-top" class="d-none d-md-block">
+        <div class="d-flex align-items-center h-100">
+            <div class="d-flex justify-content-between w-100">
+                <div class="d-flex align-items-center">
+                    <a class="logo" href="index.html"><img class="img-fluid" src="images/const/logo.svg"></a>
+                    <a class="brand" href="index.html">Alittlebit</a>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <ul>
+                        <li class="nav-item"><a class="icon icon-calendar" href="calendar.html"></a></li>
+                        <li class="nav-item"><a class="icon icon-saved" href="saved.html"></a></li>
+                        <li class="nav-item"><a class="icon icon-bell" data-toggle="modal" data-target="#notifications-modal"><span class="notifications-number">+9</span></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle icon icon-angle-down" href="#" id="dropdown-menu-log" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-menu-log">
+                                <a class="dropdown-item" href="settings.html"><span class="icon icon-settings"></span> Edit</a>
+                                <hr class="m-1">
+                                <a class="dropdown-item" href="search.html"><span class="icon icon-search"></span> Search</a>
+                                <hr class="m-1">
+                                <a class="dropdown-item" href="login.html"><span class="icon icon-log-out"></span> Logout</a>
+                            </div><!-- dropdown-menu dropdown-menu-right -->
+                        </li><!-- nav-item dropdown -->
+                    </ul>
+                    <a id="blog-link" href="blog.html"><img class="img-thumbnail rounded-circle" src="images/user2.jpg"></a>
+                </div><!-- d-flex align-items-center -->
+            </div><!-- d-flex justify-content-between w-100 -->
+        </div><!-- align-self-center w-100 -->
+    </nav><!-- #navbar-top -->
+    
+    <!-- Navbar For Small Devices -->
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark d-md-none">
+        <div class="container-fluid d-flex">
+            <div class="d-flex align-items-center">
+                <a class="logo" href="index.html"><img src="images/const/logo.svg"></a>
+                <a class="brand" href="index.html">Alittlebit</a>
+            </div><!-- d-flex align-items-center -->
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navlinks" aria-controls="navlinks" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navlinks">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><span class="icon-feed"></span> Feed</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html"><span class="icon-user"></span> Profile</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-menu">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#notifications-modal"><span class="icon icon-bell"></span> Notifications <span class="notifications-number badge badge-info">+9</span></a>
+                            <a class="dropdown-item" href="calendar.html"><span class="icon icon-calendar"></span> Calendar</a>
+                            <a class="dropdown-item" href="saved.html"><span class="icon icon-saved"></span> Saved</a>
+                            <div role="separator" class="dropdown-divider mt-1 mb-1 border-secondary"></div>
+                            <a class="dropdown-item" href="settings.html"><span class="icon icon-settings"></span> Edit</a>
+                            <a class="dropdown-item" href="search.html"><span class="icon icon-search"></span> Search</a>
+                            <a class="dropdown-item" href="login.html"><span class="icon icon-log-out"></span> Logout</a>
+                        </div><!-- dropdown-menu dropdown-menu-right -->
+                    </li>
+                </ul><!-- navbar-nav -->
+            </div><!-- collapse navbar-collapse #navlinks -->
+        </div><!-- container-fluid -->
+    </nav><!-- navbar navbar-expand-sm navbar-dark bg-dark -->
+    
+    <!-- =============== Post Preview =============== -->
+    <main id="post-preview" class="my-post">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+                    <div class="post-container">
+                        <div class="post">
+                            <img class="post-img img-fluid" src="images/post7.jpeg">
+                            <div class="post-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="react">
+                                        <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon icon-love"> 4</span>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown-item">
+                                                    <a class="user" href="#"><img src="images/user2.jpg">&nbsp;<span>redblue</span></a>
+                                                </li>
+                                                <li class="dropdown-item">
+                                                    <a class="user" href="#"><img src="images/user2.jpg">&nbsp;<span>redblue</span></a>
+                                                </li>
+                                                <li class="dropdown-item">
+                                                    <a class="user" href="#"><img src="images/user2.jpg">&nbsp;<span>redblue</span></a>
+                                                </li>
+                                                <li class="dropdown-item">
+                                                    <a class="user" href="#"><img src="images/user2.jpg">&nbsp;<span>redblue</span></a>
+                                                </li>
+                                            </ul>
+                                        </span>
+
+                                        <span class="icon icon-comments" data-toggle="modal" data-target="#post-comments-modal"> 3</span>
+                                    </div><!-- react -->
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a class="time" title="9 Sep 2018 at 1:26pm" href="post-preview.html">2h</a>
+                                        <div class="d-inline dropdown show">
+                                            <a class="dropdown-toggle icon icon-more-vertical" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></a>
+                                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-tags">
+                                                <li class="dropdown-item" data-toggle="modal" data-target="#edit-post-modal">Edit Post</li>
+                                            </ul>
+                                        </div><!-- d-inline dropdown -->
+                                    </div><!-- d-flex -->
+                                </div><!-- d-flex justify-content-between align-items-center -->
+                                <p class="post-text">Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                            </div><!-- post-body -->
+                        </div><!-- post -->
+                    </div><!-- post-container -->
+                </div><!-- col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 -->
+            </div><!-- row -->
+        </div><!-- container-fluid -->
+    </main><!-- #post-preview.my-post -->
+    
+    <div id="notifications-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="notifications-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Notifications</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal-header -->
+                <div class="modal-body p-0">
+                    <ul>
+                        <li>
+                            <a href="post-preview-not-mine.html">
+                                <span><img src="images/user2.jpg">&nbsp;redblue</span><span> replied on his post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user3.jpg">&nbsp;redblue</span><span> commented on your post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user4.jpg">&nbsp;redblue and 1 other</span><span> commented on your post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user2.jpg">&nbsp;redblue</span><span> loved your post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user2.jpg">&nbsp;redblue and 8 others</span><span> loved your post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user2.jpg">&nbsp;redblue</span><span> commented on your post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user3.jpg">&nbsp;redblue</span><span> commented on your post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user2.jpg">&nbsp;redblue</span><span> commented on your post</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="post-preview.html">
+                                <span><img src="images/user3.jpg">&nbsp;redblue</span><span> commented on your post</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info btn-sm">Read All</button>
+                </div><!-- modal-footer -->
+            </div><!-- modal-content -->
+        </div>
+    </div><!-- #notifications-modal -->
+    
+    <div id="edit-post-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="edit-post-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal-header -->
+                <div class="modal-body text-left pb-0">
+                    <form>
+                        <div>
+                            <textarea class="form-control mb-2" rows="5">Lorem Ipsum is simply dummy txt of the printing and typeseting industry Lorem Ipsum is simply dummy txt of the printing and typeseting industry Lorem Ipsum is simply dummy txt of the printing and typeseting industry Lorem Ipsum is simply dummy txt of the printing and typeseting industry.</textarea>
+                            <div class="custom-file">
+                                <label class="attach" for="uploadFile1"><span class="icon icon-image"></span>
+                                    <input type="file" id="uploadFile1" aria-describedby="uploadFile">
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info btn-sm">Save</button>
+                </div><!-- modal-footer -->
+            </div><!-- modal-content -->
+        </div>
+    </div><!-- #edit-post-modal -->
+    
+    <div id="post-comments-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="post-comments-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post Comments</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div><!-- modal-header -->
+                <div class="modal-body p-0">
+                    <ul class="comments-box">
+                        <li class="comment-container">
+                            <div>
+                                <a class="user" href="blog.html"><img src="images/user2.jpg">&nbsp;<span>redblue</span></a>
+                                <div>
+                                    <span class="time" title="9 Sep 2018 at 1:26pm">6mo</span>
+                                    <div class="d-inline dropdown show">
+                                        <a class="dropdown-toggle icon icon-more-vertical" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></a>
+                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-tags">
+                                            <li class="dropdown-item">Delete Comment</li>
+                                            <li class="dropdown-item" data-toggle="modal" data-target="#block-user-modal">Block User</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="comment">Amazing!</p>
+                        </li>
+                        
+                        <li class="comment-container">
+                            <div>
+                                <a class="user" href="blog.html"><img src="images/user2.jpg">&nbsp;<span>redblue</span></a>
+                                <div>
+                                    <span class="time" title="9 Sep 2018 at 1:26pm">5d</span>
+                                    <div class="d-inline dropdown show">
+                                        <a class="dropdown-toggle icon icon-more-vertical" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></a>
+                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-tags">
+                                            <li class="dropdown-item">Delete Comment</li>
+                                            <li class="dropdown-item" data-toggle="modal" data-target="#block-user-modal">Block User</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="comment">Lorem Ipsum is simply dummy txt of the printing and typeseting industry Lorem Ipsum is simply dummy txt of the printing and typeseting industry Lorem Ipsum is simply dummy txt of the printing and typeseting industry.</p>
+                        </li>
+                        
+                        <li class="comment-container">
+                            <div>
+                                <a class="user" href="blog.html"><img src="images/user2.jpg">&nbsp;<span>redblue</span></a>
+                                <div>
+                                    <span class="time" title="9 Sep 2018 at 1:26pm">3h</span>
+                                    <div class="d-inline dropdown show">
+                                        <a class="dropdown-toggle icon icon-more-vertical" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></a>
+                                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-tags">
+                                            <li class="dropdown-item">Delete Comment</li>
+                                            <li class="dropdown-item" data-toggle="modal" data-target="#block-user-modal">Block User</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="comment">Lorem Ipsum is simply dummy txt of the printing and typeseting industry Lorem Ipsum is simply dummy txt of the printing and typeseting industry Lorem Ipsum is simply dummy txt of the printing and typeseting industry.</p>
+                        </li>
+                    </ul><!-- comments-box -->
+                </div><!-- modal-body -->
+                <div class="modal-footer">
+                    <textarea class="form-control col-9 col-md-10" rows="1" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-sm col-3 col-md-2">Send</button>
+                </div><!-- modal-footer -->
+            </div><!-- modal-content -->
+        </div>
+    </div><!-- #post-comments-modal -->
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- ajax is used for cropit; to change profile photos -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropit/0.5.1/jquery.cropit.min.js" integrity="sha256-/tpjJ0eRRWQn5QcI3jAs3WPLlnHcFEEmI5GY0TEv1HM=" crossorigin="anonymous"></script>
+    <script src="js/simple-calendar-min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

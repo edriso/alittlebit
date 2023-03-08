@@ -1,0 +1,684 @@
+$font: #464648;
+$bg: #f9f9f9;
+$white: #fff;
+$yellow: #fbcd51;
+//$nav: #455565;
+//$nav-icons: #6d6d6d;
+$nav: #383b4c;
+$nav-icons: #585858;
+$lightyellow: #ffe358;
+$active-badge: $yellow;
+$time-color: #b1b1b1;
+$react: #999;
+$make-react: #fb6271;
+$my-react: $make-react;
+$by: #11a8d6;
+$user-comment: #11a8d6;
+$more: #11a8d6;
+$blue: #11a8d6;
+$red: #ff6363;
+$pink: #fc5a7d;
+$darkblue: #252b41;
+$dark: #2f3032;
+$gray: #808080;
+$lightgray: #868e96;
+$green: #57e191;
+$nav-top-height: 60px;
+$timeSize: 85%;
+
+$font1: 'Itim';
+$fonty: 'Kalam';
+@import url('https://fonts.googleapis.com/css?family=Itim|Kalam&display=swap');
+
+/* Base
+**********/
+body {
+    @include bg-color($bg);
+    @include color($font);
+    font-family: $font1, $fonty, 'Source Sans Pro', sans-serif;
+    position: absolute;
+    top: $nav-top-height;
+    left: 0;
+    right: 0;
+    line-height: unset;
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+a {text-decoration: none; @include make-transition($on: color, $sec: .2);}
+
+a:hover {text-decoration: none!important;}
+
+button,
+input[type=submit] {cursor: pointer;}
+
+ul {margin-bottom: 0; padding: 0; list-style: none;}
+
+p {
+    margin-bottom: 0;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.icon:before {vertical-align: middle;}
+
+textarea {
+    max-height: 350px;
+    min-height: 50px;
+}
+
+/* Bootstrap
+**************/
+.btn:focus, .btn:active {box-shadow: none!important;}
+
+.form-control:focus {
+    box-shadow: unset!important;
+    border-color: #ced4da!important;
+}
+
+.btn-success {
+    @include make-transition($on: background-color, $sec: .15);
+    @include make-transition($on: border-color, $sec: .15);
+    background-color: #19ca6d!important;
+    border-color: #19ca6d!important;
+}
+
+.btn-success:hover,
+.btn-success:active {
+    background-color: #02bd5b!important;
+    border-color: #02bd5b!important;
+}
+
+.dropdown-item,
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: unset;
+    color: unset;
+}
+
+.img-thumbnail {padding: .06rem!important;}
+
+.modal-backdrop {opacity: .95!important;}
+
+.modal {padding-right: 0!important;}
+
+.modal .modal-header {padding: 10px 15px 6px;}
+
+.modal .modal-footer {padding: 10px 15px;}
+
+.close:focus {outline: none;}
+
+.badge {font-size: 70%; vertical-align: middle;}
+
+/* Invisible Classes
+*********************/
+%post {
+    @include make-box-shadow;
+    @include bg-color;
+    border-radius: .25rem;
+    font-size: 1.05rem;
+    
+    .post-body {
+        padding: .6rem .7rem .6rem;
+    }
+    
+    .post-text {
+        line-height: 1.4;
+    }
+    
+    .post-text-mini {
+        line-height: 1.4;
+        display: none;
+    }
+    
+    .post-img {
+        min-width: 100%;
+        max-height: 700px;
+        display: block;
+        margin: 0 auto;
+        border-top-right-radius: 0.25rem;
+        border-top-left-radius: 0.25rem;
+    }
+    
+    .read-more {
+        @include color($more);
+        cursor: pointer;
+        font-size: 95%;
+    }
+    
+    .who:hover img {
+        border-color: $by;
+    }
+    
+    .who img {
+        width: 42px;
+        height: 42px;
+        padding: 0.06rem !important;
+        border-radius: 50%!important;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        transition: border-color .2s ease-in-out;
+        max-width: 100%;
+    }
+
+    .react {
+        color: $react;
+        font-size: $timeSize;
+    }
+    
+    .react .icon {
+        cursor: pointer;
+    }
+    
+    .react .dropdown-toggle::after {
+        content: none!important;
+    }
+    
+    .react .dropdown-menu {
+        overflow-y: auto;
+        max-height: 150px;
+        max-width: 220px;
+    }
+    
+    .react .dropdown-menu .user img {
+        border-radius: 50%;
+        max-width: 100%;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $lightgray;
+        @include make-transition($on: border-color, $sec: .15);
+    }
+    
+    .react .dropdown-menu .user {
+        @include make-transition($on: color, $sec: .15);
+        color: $lightgray;
+    }
+    
+    .react .dropdown-menu .user:hover img {
+        border: 1px solid $user-comment;
+    }
+    
+    .react .dropdown-menu .user:hover,
+    .react .dropdown-menu .user:active {
+        color: $user-comment;
+    }
+}
+
+%reactToggle {
+    .react {
+        .icon-heart,
+        .icon-save {
+            @include make-transition($on: color, $sec: .1);
+        }
+
+        .icon-love,
+        .icon-saved {
+            color: $make-react;
+        }
+    }
+}
+
+%feedPost {
+    .post-text,
+    .post-text-mini {
+        padding-bottom: .5rem;
+        margin-bottom: .5rem;
+        border-bottom: 1px solid #e2e2e2;
+    }
+    
+    .by-user::before {content: "by\003a \00a0"; font-size: $timeSize; @include color($time-color);}
+
+    .by-user {@include color($by); font-size: $timeSize;}
+
+    .react {
+        > span {
+            padding: 0 .15rem;
+        }
+        
+        .slash {
+            padding-left: .45rem;
+        }
+    }
+    
+    @extend %reactToggle;
+}
+
+%iconSpace {
+    .react .icon {
+        word-spacing: -3px;
+    }
+}
+
+%iconColor {
+    .react {
+        color: $my-react;
+    }
+}
+
+%post,
+#post-comments-modal {
+    .time {
+        @include color($time-color);
+        font-size: $timeSize;
+    }
+
+    a.dropdown-toggle {
+        @include color($time-color);
+        &:after {
+            content: none;
+        }
+    }
+
+    ul.dropdown-menu {
+        padding: 0;
+        min-width: 6rem;
+        font-size: .85rem;
+    }
+
+    .dropdown-item {
+        color: #848383;
+        padding: .4rem .8rem;
+        cursor: pointer;
+    }
+
+    .dropdown-item:hover {
+        color: $font;
+    }
+    
+    .dropdown-item:not(:last-of-type) {
+        border-bottom: 1px solid #eee;
+    }
+}
+
+/* fixed Elements
+*******************/
+.modal .attach {
+    color: #008b8b;
+    cursor: pointer;
+}
+
+.modal input[type="file"] {
+    font-size: .7rem;
+    opacity: .3;
+}
+
+.btn-yellow {
+    color: #fff;
+    background-color: $yellow;
+    border-color: $yellow;
+}
+
+.btn-yellow:hover,
+.btn-yellow:active {
+    background-color: #f7c641;
+    border-color: #f7c641;
+}
+
+.btn-pink {
+    color: #fff;
+    background-color: #f25168;
+    border-color: #f25168;
+}
+
+button#post-it-here {
+    position: fixed;
+    z-index: 9;
+    right: 15px; bottom: 15px;
+}
+
+#post-it-modal {
+    font-family: $fonty;
+    div.modal-header {
+        padding: 10px 15px;
+        margin: .25rem 0;
+    }
+    
+    #post-day-number {
+        margin-bottom: 0;
+    }
+    
+    div.modal-body {
+        padding-bottom: 0;
+    }
+    
+}
+
+#show-post-modal {
+    .modal-dialog {
+        pointer-events: unset;
+    }
+    
+    .modal-header {
+        border-bottom: 0;
+        padding: 0;
+        padding-right: 7px;
+        overflow: hidden;
+    }
+    
+    .close {
+        color: #fff;
+        opacity: 1;
+        text-shadow: none;
+    }
+    
+    .post {
+        margin-bottom: 0!important;
+    }
+}
+
+#post-comments-modal {
+    .modal-body {
+        ul.comments-box {
+            padding: 0 15px;
+            max-height: 350px;
+            min-height: 320px;
+            overflow: auto;
+            
+            > li {
+                padding: .4rem .2rem .2rem;
+                border-bottom: 1px solid #eee;
+            }
+        }
+
+        .comment-container > div {
+            display: flex;
+            display: -ms-flexbox;
+            justify-content: space-between;
+            -ms-flex-pack: justify;
+            align-items: center;
+            -ms-flex-align: center;
+        }
+
+        ul .user {
+            color: $lightgray;
+            @include make-transition($on: color, $sec: .15);
+        }
+
+        ul .user:hover,
+        ul .user:active {
+            color: $user-comment;
+        }
+
+        .user img {
+            border-radius: 50%;
+            max-width: 100%;
+            width: 25px;
+            height: 25px;
+            border: 1px solid $lightgray;
+            @include make-transition($on: border-color, $sec: .15);
+        }
+
+        ul .user:hover img {
+            border: 1px solid $user-comment;
+        }
+
+        ul .comment {
+            padding: .25rem;
+            padding-left: .9rem;
+        }
+        
+        .delete-comment {
+            margin: .5rem 0 .25rem;
+            
+            li span {
+                cursor: pointer;
+                padding: .2rem;
+                color: #777;
+                background-color: #f1f1f1;
+                border-radius: .5rem;
+            }
+            
+            li:nth-child(2) span {
+                color: $red;
+            }
+        }
+    }
+    
+    .modal-footer {
+        border-top: none;
+        padding-left: 1.5rem; 
+    }
+    
+    .modal-footer textarea {
+        resize: none;
+    }
+    
+    .modal-footer .btn {
+        color: #fff;
+        background-color: $blue;
+        border: 3px solid $blue;
+        margin-left: .5rem;
+    }
+}
+
+#notifications-modal {
+    .modal-body {
+        max-height: 400px;
+        min-height: 50px;
+        overflow-y: auto;
+        
+        ul {
+            font-size: .9rem;
+        }
+
+        ul li > a {
+            color: $lightgray;
+            display: block;
+            padding: .7rem .5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        ul li > a:hover {
+            color: #6f6f6f;
+        }
+
+        ul li > a img {
+            border-radius: 50%;
+            max-width: 100%;
+            width: 30px;
+            height: 30px;
+            border: 1px solid $lightgray;
+            @include make-transition($on: border-color, $sec: .2);
+        }
+        
+        ul li > a:hover img {
+            border-color: #6f6f6f;
+        }
+    }
+    
+    .modal-footer {
+        border-top: none;
+    }
+}
+
+/* Navbars
+************/
+.logo {
+    margin-right: 7px;
+}
+
+.brand {
+    color: #fff!important;
+    margin-top: .25rem;
+}
+
+.greeting {
+    margin-top: .25rem;
+    margin-left: 5px;
+    color: #f0f8ff;
+}
+
+#navbar-top {
+    @include bg-color($nav);
+    font-family: $fonty;
+    position: fixed;
+    top: 0;
+    right: 0; left: 0;
+    height: $nav-top-height;
+    z-index: 999;
+    
+    a.logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 7px;
+    }
+    
+    a#blog-link {
+        margin-right: 7px;
+        margin-left: 7px;
+        width: 44px;
+        height: 44px;
+    }
+    
+    a#blog-link img {
+        padding: 0!important;
+        background-color: #242b40;
+        border-color: #242b40;
+    }
+    
+    a#blog-link:hover img {
+        background-color: #fff;
+        border-color: #fff;
+    }
+    
+    li.nav-item {
+        display: inline-block;
+        padding-right: 7px;
+        position: relative;
+    }
+    
+    li.nav-item:last-child {
+        padding-right: .5px;
+    }
+    
+    li.nav-item .notifications-number {
+        color: $white;
+        background-color: $blue;
+        position: absolute;
+        top: 0; left: -2px;
+        border-radius: 50%;
+        font-size: .5rem;
+        font-weight: 600;
+        width: 13px;
+        height: 13px;
+        line-height: 15px;   
+        text-align: center;
+    }
+    
+    li.nav-item > a {
+        @include make-transition($on: color);
+        color: $nav-icons;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    li.nav-item > a:hover {
+        @include color($white);
+    }
+    
+    li.nav-item a.dropdown-toggle::after {
+        content: none;
+    }
+    
+    li.dropdown .dropdown-menu {
+        padding: 2px 0 4px;
+        left: 50.5px!important;
+        min-width: 7.6rem;
+        line-height: 1.3;
+        color: $font;
+    }
+    
+    li.dropdown .dropdown-menu .icon {
+        font-size: 1.3rem;
+    }
+    
+    li.dropdown .dropdown-menu:before {
+        content: '';
+        position: absolute;
+        right: 50.5px;
+        margin-top: -9px;
+        width: 0;
+        height: 0;
+        border-bottom: solid 7px $white;
+        border-left: solid 7px transparent;
+        border-right: solid 7px transparent;
+    }
+    
+    li.dropdown .dropdown-item {
+        padding: 0 .5rem;
+        color: $nav-icons;
+    }
+    
+    li.dropdown .dropdown-item:focus,
+    li.dropdown .dropdown-item:hover {
+        color: $nav;
+    }
+    
+    li.dropdown .icon::before {
+        font-size: .95rem;
+    }
+}
+
+nav.navbar {
+    @include bg-color($nav);
+    font-family: $fonty;
+    
+    .logo {
+        height: 45px;
+        width: 45px;
+    }
+    
+    .greeting {
+        font-size: 90%;
+    }
+    
+    .navbar-nav {
+        padding: .2rem .5rem;
+    }
+    
+    li.nav-item {
+        font-size: 1.05rem;
+        a.dropdown-item {
+            color: $nav;
+        }
+    }
+    
+    li.nav-item a.dropdown-item:hover,
+    li.nav-item a.dropdown-item:active,
+    li.nav-item a.dropdown-item.active {
+        @include color($white);
+        background-color: $nav;
+    }
+    
+    .dropdown-menu {
+        font-size: .87rem;
+    }
+    
+    a.dropdown-item {
+        cursor: pointer;
+    }
+}
+
+/* Icons
+**********/
+.icon-globe:before {
+    font-size: 14px;
+}
+.icon-youtube:before {
+  margin: 0 .5px;
+}
+.icon-instagram:before {
+  font-size: 17px;
+  margin: 0 -.5px;
+}
+.icon-dribble:before {
+  font-size: 19px;
+  margin: 0 -2px;
+}
